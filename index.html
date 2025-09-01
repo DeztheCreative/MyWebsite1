@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Think Big and Live Large - Official Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background: linear-gradient(to bottom right, #f4f4f4, #e0e0e0);
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            max-width: 650px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        img.book-cover {
+            max-width: 280px;
+            margin-bottom: 25px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: #222;
+            margin-bottom: 15px;
+            font-size: 2.2em;
+        }
+        p {
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-size: 1.05em;
+        }
+        .author {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #e74c3c;
+            color: white !important;
+            padding: 15px 30px;
+            margin: 15px 10px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #c0392b;
+        }
+        .secondary-button {
+            background-color: #3498db;
+        }
+        .secondary-button:hover {
+            background-color: #2980b9;
+        }
+        .launch-date {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #e74c3c;
+            margin: 30px 0;
+        }
+        #countdown {
+            font-size: 1.1em;
+            margin-top: 10px;
+            color: #2c3e50;
+        }
+        .email-form {
+            margin: 35px 0;
+        }
+        .email-form input {
+            padding: 15px;
+            width: 70%;
+            max-width: 350px;
+            border: 1px solid #ddd;
+            border-radius: 8px 0 0 8px;
+            font-size: 1em;
+        }
+        .email-form button {
+            padding: 15px 25px;
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            border-radius: 0 8px 8px 0;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .email-form button:hover {
+            background-color: #27ae60;
+        }
+        .links {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+        .links a {
+            color: #3498db;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- REPLACE 'your-book-cover.jpg' WITH YOUR ACTUAL IMAGE FILENAME -->
+        <img src="TBLLCOVER.png" alt="Think Big and Live Large Book Cover" class="book-cover">
+
+        <h1>Think Big. Live Large.</h1>
+        <p>A Modern-Day Guide to Spiritual Strength & Unshakable Purpose. This is more than a book; it's a roadmap for spiritual resilience, showing how to transform trauma into triumph.</p>
+        
+        <p class="author">By Desmond Batts | Author, Artist, Advocate</p>
+        
+        <!-- Big Amazon Button -->
+        <a href="https://a.co/d/a2B0FzD" class="cta-button" target="_blank">📖 Get Your Copy on Amazon</a>
+        <br>
+        <!-- Video and Channel Buttons -->
+        <a href="https://youtube.com/shorts/zCV63DCNSY8?si=tRkaX08o3vrAYJvx" class="cta-button secondary-button" target="_blank">🎥 Watch the Book Video</a>
+        <a href="https://www.youtube.com/@BattsMarketing" class="cta-button secondary-button" target="_blank">✅ Batts Marketing YouTube</a>
+
+        <!-- Email Capture Form -->
+        <div class="email-form">
+            <p><strong>Stay Updated for the Full Site Launch & New Books!</strong></p>
+            <form action="https://formspree.io/f/xqadlbvo" method="POST">
+                <input type="email" name="email" placeholder="Enter your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+
+        <div class="launch-date">
+            🚀 Full Site & New Books Launching: January 1, 2026 🚀
+            <div id="countdown">Loading countdown...</div>
+        </div>
+        
+        <div class="links">
+            <p>For inquiries, contact <a href="mailto:Battsmarketing@gmail.com">Battsmarketing@gmail.com</a></p>
+            <p>Explore more at <a href="https://linktr.ee/dezsellz1" target="_blank">Linktr.ee/dezsellz1</a></p>
+        </div>
+    </div>
+
+    <script>
+        // Simple Countdown Timer
+        function updateCountdown() {
+            const launchDate = new Date('January 1, 2026 00:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = launchDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m ";
+        }
+
+        // Update the countdown every minute
+        updateCountdown();
+        setInterval(updateCountdown, 60000);
+    </script>
+</body>
+</html>
