@@ -1,0 +1,276 @@
+/* ===== RESET & BASE STYLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #0f0f13;
+    color: white;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== LOGO SECTION ===== */
+.logo-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    flex: 1;
+}
+
+.main-logo {
+    max-width: 400px;
+    width: 80%;
+    height: auto;
+    margin-bottom: 30px;
+    /* Add glow effect to make it pop */
+    filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.3));
+}
+
+.company-name {
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 3.5rem;
+    color: white;
+    text-align: center;
+    letter-spacing: 2px;
+    margin-top: 10px;
+    text-shadow: 3px 3px 0 #ff6b8b, 
+                 6px 6px 0 #1e90ff;
+}
+
+/* ===== BUTTONS SECTION ===== */
+.buttons-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 40px 20px;
+    opacity: 0;
+    animation: fadeInButtons 0.8s ease forwards;
+    animation-delay: 1.5s; /* Buttons appear after logo */
+}
+
+@keyframes fadeInButtons {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.world-btn {
+    width: 90%;
+    max-width: 600px;
+    height: 160px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 30px;
+    font-family: 'Luckiest Guy', cursive;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Button Colors & Styling */
+.writing-btn {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    box-shadow: 0 10px 30px rgba(30, 144, 255, 0.3);
+}
+
+.music-btn {
+    background: linear-gradient(135deg, #ff6b8b 0%, #ff8e53 100%);
+    box-shadow: 0 10px 30px rgba(255, 107, 139, 0.3);
+}
+
+.art-btn {
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+}
+
+/* Button Hover Effects */
+.world-btn:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.writing-btn:hover {
+    box-shadow: 0 20px 40px rgba(30, 144, 255, 0.5);
+}
+
+.music-btn:hover {
+    box-shadow: 0 20px 40px rgba(255, 107, 139, 0.5);
+}
+
+.art-btn:hover {
+    box-shadow: 0 20px 40px rgba(255, 215, 0, 0.5);
+}
+
+/* Button Content */
+.btn-icon {
+    font-size: 2.8rem;
+    color: white;
+}
+
+.btn-text {
+    font-size: 2.2rem;
+    color: white;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* ===== VIDEO PLAYER ===== */
+.video-player {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+#world-video {
+    width: 90%;
+    max-width: 1000px;
+    max-height: 80vh;
+    border-radius: 10px;
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.1);
+}
+
+.skip-btn {
+    margin-top: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.skip-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+/* ===== WORLD PAGES ===== */
+.world-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0f0f13;
+    padding: 40px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 900;
+}
+
+.world-page h2 {
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 3rem;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.world-page p {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    text-align: center;
+    max-width: 600px;
+}
+
+.back-home-btn {
+    background: #ff6b8b;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 30px;
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.back-home-btn:hover {
+    background: #ff8e53;
+    transform: scale(1.05);
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .company-name {
+        font-size: 2.5rem;
+        text-shadow: 2px 2px 0 #ff6b8b, 
+                     4px 4px 0 #1e90ff;
+    }
+    
+    .main-logo {
+        max-width: 300px;
+    }
+    
+    .world-btn {
+        height: 120px;
+    }
+    
+    .btn-icon {
+        font-size: 2rem;
+    }
+    
+    .btn-text {
+        font-size: 1.6rem;
+    }
+    
+    .world-page h2 {
+        font-size: 2.2rem;
+    }
+    
+    .world-page p {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .company-name {
+        font-size: 2rem;
+    }
+    
+    .world-btn {
+        height: 100px;
+        gap: 15px;
+        padding: 0 20px;
+    }
+    
+    .btn-icon {
+        font-size: 1.8rem;
+    }
+    
+    .btn-text {
+        font-size: 1.3rem;
+    }
+}
