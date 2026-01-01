@@ -37,7 +37,6 @@ body {
     width: 80%;
     height: auto;
     margin-bottom: 30px;
-    /* Add glow effect to make it pop */
     filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.3));
 }
 
@@ -48,8 +47,7 @@ body {
     text-align: center;
     letter-spacing: 2px;
     margin-top: 10px;
-    text-shadow: 3px 3px 0 #ff6b8b, 
-                 6px 6px 0 #1e90ff;
+    text-shadow: 3px 3px 0 #ff6b8b, 6px 6px 0 #1e90ff;
 }
 
 /* ===== BUTTONS SECTION ===== */
@@ -61,7 +59,7 @@ body {
     padding: 40px 20px;
     opacity: 0;
     animation: fadeInButtons 0.8s ease forwards;
-    animation-delay: 1.5s; /* Buttons appear after logo */
+    animation-delay: 1.5s;
 }
 
 @keyframes fadeInButtons {
@@ -87,7 +85,6 @@ body {
     overflow: hidden;
 }
 
-/* Button Colors & Styling */
 .writing-btn {
     background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
     box-shadow: 0 10px 30px rgba(30, 144, 255, 0.3);
@@ -103,7 +100,6 @@ body {
     box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
 }
 
-/* Button Hover Effects */
 .world-btn:hover {
     transform: translateY(-8px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
@@ -121,7 +117,6 @@ body {
     box-shadow: 0 20px 40px rgba(255, 215, 0, 0.5);
 }
 
-/* Button Content */
 .btn-icon {
     font-size: 2.8rem;
     color: white;
@@ -189,45 +184,345 @@ body {
     align-items: center;
     justify-content: center;
     z-index: 900;
+    overflow-y: auto;
 }
 
-.world-page h2 {
+/* ===== WRITING PAGE STYLES ===== */
+.writing-content {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.section-header {
     font-family: 'Luckiest Guy', cursive;
-    font-size: 3rem;
-    margin-bottom: 30px;
+    font-size: 2.8rem;
+    color: white;
+    margin: 60px 0 40px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.section-header:first-child {
+    margin-top: 0;
+}
+
+.section-header span {
+    color: #1e90ff;
+}
+
+/* Book Grid */
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.book-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.book-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 15px 35px rgba(30, 144, 255, 0.2);
+}
+
+.book-cover-placeholder {
+    width: 200px;
+    height: 300px;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    border-radius: 8px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
     color: white;
 }
 
-.world-page p {
-    font-size: 1.5rem;
-    margin-bottom: 40px;
-    text-align: center;
-    max-width: 600px;
+.book-title {
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 1.8rem;
+    color: white;
+    margin-bottom: 10px;
 }
 
-.back-home-btn {
+.book-subtitle {
+    color: #d4af37;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.book-description {
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.amazon-btn {
+    display: inline-block;
+    background: #FF9900;
+    color: #000;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.amazon-btn:hover {
+    background: #ffad33;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(255, 153, 0, 0.4);
+}
+
+.amazon-btn i {
+    margin-right: 8px;
+}
+
+/* Coming Soon */
+.coming-soon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.coming-soon-card {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 15px;
+    padding: 30px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.trilogy-card {
+    grid-column: span 2;
+}
+
+.coming-soon-cover-placeholder {
+    width: 180px;
+    height: 270px;
+    background: linear-gradient(135deg, #880e4f, #ad1457);
+    border-radius: 8px;
+    float: left;
+    margin-right: 25px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: white;
+}
+
+.trilogy-placeholder {
+    background: linear-gradient(135deg, #004d40, #00695c);
+    font-size: 2rem;
+}
+
+.coming-soon-title {
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 2rem;
+    color: #d4af37;
+    margin-bottom: 10px;
+}
+
+.genre-tag {
+    display: inline-block;
+    background: rgba(30, 144, 255, 0.2);
+    color: #1e90ff;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    margin-right: 10px;
+}
+
+.coming-soon-description {
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.trilogy-books {
+    margin-top: 20px;
+}
+
+.trilogy-book {
+    margin-bottom: 15px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+}
+
+.trilogy-book h4 {
+    color: #d4af37;
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+}
+
+.trilogy-book p {
+    color: #ccc;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Script Section */
+.script-section {
+    background: rgba(255, 107, 139, 0.1);
+    border-radius: 15px;
+    padding: 40px;
+    margin: 60px 0;
+    border-left: 5px solid #ff6b8b;
+}
+
+.script-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.script-image-placeholder {
+    width: 150px;
+    height: 200px;
+    background: linear-gradient(135deg, #333, #666);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: #ff6b8b;
+}
+
+.script-title {
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.script-logline {
+    font-size: 1.4rem;
+    color: #ff6b8b;
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.script-pitch {
+    color: #ff8e53;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.script-description {
+    color: #ccc;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.script-btn {
+    display: inline-block;
     background: #ff6b8b;
     color: white;
+    padding: 15px 35px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.script-btn:hover {
+    background: #ff8e53;
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(255, 107, 139, 0.4);
+}
+
+/* Pen for Hire */
+.pen-for-hire {
+    text-align: center;
+    padding: 40px;
+    margin-top: 60px;
+    background: rgba(212, 175, 55, 0.1);
+    border-radius: 15px;
+    border-top: 2px solid rgba(212, 175, 55, 0.3);
+}
+
+.pen-for-hire h3 {
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 2rem;
+    color: #d4af37;
+    margin-bottom: 15px;
+}
+
+.pen-for-hire p {
+    color: #ccc;
+    max-width: 600px;
+    margin: 0 auto 25px;
+    line-height: 1.6;
+}
+
+.contact-btn {
+    display: inline-block;
+    background: transparent;
+    color: #d4af37;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border: 2px solid #d4af37;
+    transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+    background: #d4af37;
+    color: #000;
+    transform: scale(1.05);
+}
+
+/* Back Home Button */
+.back-home-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    background: #1e90ff;
+    color: white;
     border: none;
-    padding: 15px 40px;
+    padding: 12px 25px;
     border-radius: 30px;
     font-family: 'Luckiest Guy', cursive;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .back-home-btn:hover {
-    background: #ff8e53;
+    background: #4aa8ff;
     transform: scale(1.05);
 }
 
-/* ===== MOBILE RESPONSIVE ===== */
+/* Mobile Responsive */
 @media (max-width: 768px) {
     .company-name {
         font-size: 2.5rem;
-        text-shadow: 2px 2px 0 #ff6b8b, 
-                     4px 4px 0 #1e90ff;
+        text-shadow: 2px 2px 0 #ff6b8b, 4px 4px 0 #1e90ff;
     }
     
     .main-logo {
@@ -246,12 +541,36 @@ body {
         font-size: 1.6rem;
     }
     
-    .world-page h2 {
+    .section-header {
         font-size: 2.2rem;
     }
     
-    .world-page p {
-        font-size: 1.2rem;
+    .books-grid, .coming-soon-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .trilogy-card {
+        grid-column: span 1;
+    }
+    
+    .coming-soon-cover-placeholder {
+        float: none;
+        display: block;
+        margin: 0 auto 20px;
+    }
+    
+    .script-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .script-title {
+        font-size: 2rem;
+    }
+    
+    .book-cover-placeholder {
+        width: 160px;
+        height: 240px;
     }
 }
 
@@ -272,5 +591,22 @@ body {
     
     .btn-text {
         font-size: 1.3rem;
+    }
+    
+    .section-header {
+        font-size: 1.8rem;
+    }
+    
+    .book-card, .coming-soon-card {
+        padding: 20px;
+    }
+    
+    .script-section {
+        padding: 25px;
+    }
+    
+    .back-home-btn {
+        padding: 10px 20px;
+        font-size: 1rem;
     }
 }
