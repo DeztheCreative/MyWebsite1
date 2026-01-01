@@ -18,47 +18,47 @@
     <!-- MAIN CONTAINER -->
     <div class="container">
         
-        <!-- LOGO SECTION -->
-        <div class="logo-section">
-            <!-- YOUR LOGO GOES HERE -->
-            <img src="batts-logo.png" alt="Batts Marketing Logo" class="main-logo" id="batts-logo">
+        <!-- HOME SECTION -->
+        <div id="home-section">
+            <!-- LOGO SECTION -->
+            <div class="logo-section">
+                <!-- YOUR LOGO -->
+                <img src="images/batts-logo.png" alt="Batts Marketing Logo" class="main-logo" id="batts-logo">
+                
+                <!-- Company Name Banner -->
+                <h1 class="company-name">Batts Marketing</h1>
+            </div>
             
-            <!-- Company Name Banner -->
-            <h1 class="company-name">Batts Marketing</h1>
+            <!-- BUTTONS SECTION -->
+            <div class="buttons-section" id="buttons-section">
+                <button class="world-btn writing-btn" onclick="enterWorld('writing')">
+                    <i class="fas fa-book-open btn-icon"></i>
+                    <span class="btn-text">Writing & Books</span>
+                </button>
+                
+                <button class="world-btn music-btn" onclick="enterWorld('music')">
+                    <i class="fas fa-music btn-icon"></i>
+                    <span class="btn-text">Music & Film</span>
+                </button>
+                
+                <button class="world-btn art-btn" onclick="enterWorld('art')">
+                    <i class="fas fa-palette btn-icon"></i>
+                    <span class="btn-text">Art & Design</span>
+                </button>
+            </div>
         </div>
         
-        <!-- BUTTONS SECTION (hidden at first) -->
-        <div class="buttons-section" id="buttons-section">
-            <button class="world-btn writing-btn" onclick="enterWorld('writing')">
-                <i class="fas fa-book-open btn-icon"></i>
-                <span class="btn-text">Writing & Books</span>
-            </button>
-            
-            <button class="world-btn music-btn" onclick="enterWorld('music')">
-                <i class="fas fa-music btn-icon"></i>
-                <span class="btn-text">Music & Film</span>
-            </button>
-            
-            <button class="world-btn art-btn" onclick="enterWorld('art')">
-                <i class="fas fa-palette btn-icon"></i>
-                <span class="btn-text">Art & Design</span>
-            </button>
-        </div>
-        
-        <!-- VIDEO PLAYER (hidden until button click) -->
+        <!-- VIDEO PLAYER -->
         <div class="video-player" id="video-player">
             <video id="world-video" controls>
-                <!-- Video source will be added by JavaScript -->
                 Your browser does not support the video tag.
             </video>
             <button class="skip-btn" onclick="skipVideo()">Skip Intro <i class="fas fa-forward"></i></button>
         </div>
         
-        <!-- WORLD PAGES (hidden until after video) -->
+        <!-- WORLD PAGES -->
         <div class="world-page" id="writing-page">
-            <h2>Writing & Books Page</h2>
-            <p>This is a placeholder for the Writing & Books content.</p>
-            <button class="back-home-btn" onclick="goBackHome()">Back Home</button>
+            <!-- Content loaded by JavaScript -->
         </div>
         
         <div class="world-page" id="music-page">
